@@ -5,7 +5,7 @@ using Qiniu.Conf;
 using Qiniu.IO;
 using Qiniu.RS;
 
-namespace DePet.Common
+namespace DcPet.Common
 {
     public class QiniuHelp
     {

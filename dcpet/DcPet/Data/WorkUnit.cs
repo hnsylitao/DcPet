@@ -25,7 +25,7 @@ namespace DcPet.Data
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            db.Dispose();
         }
     }
 }

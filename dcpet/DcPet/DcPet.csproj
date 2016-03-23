@@ -159,14 +159,18 @@
       <LastGenOutput>DcPet.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterApp.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Api\Controllers\PetController.cs" />
+    <Compile Include="Areas\Api\Controllers\UserController.cs" />
+    <Compile Include="Areas\Api\Models\UserViewModel.cs" />
     <Compile Include="Areas\File\Controllers\FileController.cs" />
     <Compile Include="Areas\File\FileAreaRegistration.cs" />
     <Compile Include="Common\Encrypt\Encrypt.cs" />
@@ -174,6 +178,9 @@
     <Compile Include="Common\Json\Json.cs" />
     <Compile Include="Common\Json\TResult.cs" />
     <Compile Include="Common\Qiniu\QiniuHelp.cs" />
+    <Compile Include="Common\String\StringHelp.cs" />
+    <Compile Include="Common\WEB\WEBHelp.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\DcPet.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +219,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\App\DcPets.cs" />
+    <Compile Include="Models\App\DcUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +234,10 @@
       <DependentUpon>DcPet.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\File\Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Api\Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,11 +247,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Views\Common\" />
+    <Folder Include="Areas\Api\Views\Pet\" />
+    <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Areas\Api\Views\User\" />
     <Folder Include="Areas\File\Models\" />
     <Folder Include="Areas\File\Views\File\" />
     <Folder Include="Areas\File\Views\Shared\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

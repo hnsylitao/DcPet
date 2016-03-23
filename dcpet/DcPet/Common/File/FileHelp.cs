@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace DePet.Common
+namespace DcPet.Common
 {
     public static class FileHelp
     {

@@ -1,4 +1,4 @@
-﻿using DePet.Common;
+﻿using DcPet.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +9,19 @@ namespace DcPet.Areas.File.Controllers
 {
     public class FileController : Controller
     {
-        // GET: File/File
         public ActionResult UploadFile(HttpPostedFileBase file)
         {
             var staticfiltpath = FileHelp.UploadFile(file);
             if (string.IsNullOrEmpty(staticfiltpath))
             {
-                return Content(new { erro = "文件错误" }.ToJson());
+                return new TResult("文件错误").ToResult();
             }
             else {
+                TResult T = new TResult();
                 var qiniu = new QiniuHelp();
                 var serverpath = qiniu.upfile(staticfiltpath);
-                return Content(new { file = serverpath }.ToJson());
+                T.data = serverpath;
+                return T.ToResult();
             }
         }
     }

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/3/23 14:06:44                           */
+/* Created on:     2016/3/23 14:29:22                           */
 /*==============================================================*/
 
 
@@ -41,7 +41,7 @@ create table Dc_Pet
    address              varchar(500),
    firsttime            datetime not null,
    lasttime             datetime,
-   token                char(32) not null,
+   token                char(36) not null,
    demand               varchar(2000),
    disable              bit(1) not null,
    primary key (id)
