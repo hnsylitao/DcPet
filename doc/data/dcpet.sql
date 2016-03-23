@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/3/21 13:48:14                           */
+/* Created on:     2016/3/23 14:06:44                           */
 /*==============================================================*/
 
 
@@ -36,7 +36,7 @@ create table Dc_Pet
    pettype              int not null,
    name                 varchar(102) not null,
    sex                  int not null,
-   age                  int not null,
+   date                 datetime not null,
    area                 varchar(32) not null,
    address              varchar(500),
    firsttime            datetime not null,
