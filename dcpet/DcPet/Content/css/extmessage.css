@@ -8,6 +8,13 @@
     left: 0px;
     z-index: 19998;
 }
+.jq_filter {
+    filter:blur(3px);
+    -webkit-filter: blur(3px); /* Chrome, Opera */
+       -moz-filter: blur(3px);
+        -ms-filter: blur(3px);    
+            filter: blur(3px);
+}
 .jq_shadow {
     position: absolute;
     left: 0px;

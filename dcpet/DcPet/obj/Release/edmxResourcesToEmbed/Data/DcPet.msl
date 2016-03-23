@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DcPetModelStoreContainer" CdmEntityContainer="DcPetEntities">
+    <EntitySetMapping Name="dc_area">
+      <EntityTypeMapping TypeName="DcPetModel.dc_area">
+        <MappingFragment StoreEntitySet="dc_area">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dc_pet">
+      <EntityTypeMapping TypeName="DcPetModel.dc_pet">
+        <MappingFragment StoreEntitySet="dc_pet">
+          <ScalarProperty Name="disable" ColumnName="disable" />
+          <ScalarProperty Name="demand" ColumnName="demand" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pettype" ColumnName="pettype" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dc_pet_image">
+      <EntityTypeMapping TypeName="DcPetModel.dc_pet_image">
+        <MappingFragment StoreEntitySet="dc_pet_image">
+          <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="petid" ColumnName="petid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dc_pettype">
+      <EntityTypeMapping TypeName="DcPetModel.dc_pettype">
+        <MappingFragment StoreEntitySet="dc_pettype">
+          <ScalarProperty Name="pettype" ColumnName="pettype" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dc_user">
+      <EntityTypeMapping TypeName="DcPetModel.dc_user">
+        <MappingFragment StoreEntitySet="dc_user">
+          <ScalarProperty Name="disable" ColumnName="disable" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+          <ScalarProperty Name="lastip" ColumnName="lastip" />
+          <ScalarProperty Name="firstip" ColumnName="firstip" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="device" ColumnName="device" />
+          <ScalarProperty Name="uuid" ColumnName="uuid" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dc_userdata">
+      <EntityTypeMapping TypeName="DcPetModel.dc_userdata">
+        <MappingFragment StoreEntitySet="dc_userdata">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

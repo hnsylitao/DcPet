@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DcPetModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dc_area">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="no" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_pet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pettype" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="sex" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="area" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="lasttime" Type="datetime" Precision="0" />
+    <Property Name="token" Type="guid" Nullable="false" />
+    <Property Name="demand" Type="varchar" MaxLength="2000" />
+    <Property Name="disable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_pet_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="petid" Type="int" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_pettype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pettype" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_user">
+    <Key>
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="token" Type="guid" Nullable="false" />
+    <Property Name="uuid" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="device" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="platform" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="firstip" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="lastip" Type="varchar" MaxLength="102" />
+    <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="lasttime" Type="datetime" Precision="0" />
+    <Property Name="disable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_userdata">
+    <Key>
+      <PropertyRef Name="phonenumber" />
+    </Key>
+    <Property Name="token" Type="guid" Nullable="false" />
+    <Property Name="phonenumber" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="102" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DcPetModelStoreContainer">
+    <EntitySet Name="dc_area" EntityType="Self.dc_area" Schema="dcpet" store:Type="Tables" />
+    <EntitySet Name="dc_pet" EntityType="Self.dc_pet" Schema="dcpet" store:Type="Tables" />
+    <EntitySet Name="dc_pet_image" EntityType="Self.dc_pet_image" Schema="dcpet" store:Type="Tables" />
+    <EntitySet Name="dc_pettype" EntityType="Self.dc_pettype" Schema="dcpet" store:Type="Tables" />
+    <EntitySet Name="dc_user" EntityType="Self.dc_user" Schema="dcpet" store:Type="Tables" />
+    <EntitySet Name="dc_userdata" EntityType="Self.dc_userdata" Schema="dcpet" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -216,6 +216,7 @@
         },
 
         show: function () {
+            $("body>*").not($(".jq_back")).addClass('jq_filter');
             var model = message.model;
             model.elm.jq_back.fadeIn();
             model.elm.jq_message.show();
@@ -223,6 +224,7 @@
         },
 
         hide: function () {
+            $("body>*").not($(".jq_back")).removeClass('jq_filter');
             var model = message.model;
             model.elm.jq_message.hide();
             model.elm.jq_back.hide();

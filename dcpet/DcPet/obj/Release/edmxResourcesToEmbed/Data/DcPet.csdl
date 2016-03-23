@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DcPetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DcPetEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dc_area" EntityType="DcPetModel.dc_area" />
+    <EntitySet Name="dc_pet" EntityType="DcPetModel.dc_pet" />
+    <EntitySet Name="dc_pet_image" EntityType="DcPetModel.dc_pet_image" />
+    <EntitySet Name="dc_pettype" EntityType="DcPetModel.dc_pettype" />
+    <EntitySet Name="dc_user" EntityType="DcPetModel.dc_user" />
+    <EntitySet Name="dc_userdata" EntityType="DcPetModel.dc_userdata" />
+  </EntityContainer>
+  <EntityType Name="dc_area">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dc_pet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pettype" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="sex" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="area" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="firsttime" Type="DateTime" Nullable="false" />
+    <Property Name="lasttime" Type="DateTime" />
+    <Property Name="token" Type="Guid" Nullable="false" />
+    <Property Name="demand" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="disable" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_pet_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="petid" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="firsttime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_pettype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pettype" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dc_user">
+    <Key>
+      <PropertyRef Name="token" />
+    </Key>
+    <Property Name="token" Type="Guid" Nullable="false" />
+    <Property Name="uuid" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="device" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="platform" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="firstip" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="lastip" Type="String" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="firsttime" Type="DateTime" Nullable="false" />
+    <Property Name="lasttime" Type="DateTime" />
+    <Property Name="disable" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dc_userdata">
+    <Key>
+      <PropertyRef Name="phonenumber" />
+    </Key>
+    <Property Name="token" Type="Guid" Nullable="false" />
+    <Property Name="phonenumber" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
