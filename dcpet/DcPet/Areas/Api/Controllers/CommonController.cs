@@ -10,7 +10,7 @@ namespace DcPet.Areas.Api.Controllers
 {
     public class CommonController : Controller
     {
-        
+        [HttpGet]
         public ActionResult Area()
         {
             using (WorkUnit wu = new WorkUnit())
@@ -25,6 +25,7 @@ namespace DcPet.Areas.Api.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult PetType()
         {
             using (WorkUnit wu = new WorkUnit())

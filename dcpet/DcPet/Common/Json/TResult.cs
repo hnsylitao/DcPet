@@ -65,6 +65,11 @@ namespace DcPet.Common
     /// 分页 Json
     /// </summary>
     public class TResultForPage :TResult {
+        public static TResultForPage Empty;
+        static TResultForPage() {
+            Empty=new TResultForPage();
+        }
+
         /// <summary>
         /// 当前显示页
         /// </summary>

@@ -177,6 +177,7 @@
     <Compile Include="Common\File\FileHelp.cs" />
     <Compile Include="Common\Json\Json.cs" />
     <Compile Include="Common\Json\TResult.cs" />
+    <Compile Include="Common\Linq\LinqHelp.cs" />
     <Compile Include="Common\Qiniu\QiniuHelp.cs" />
     <Compile Include="Common\String\StringHelp.cs" />
     <Compile Include="Common\WEB\WEBHelp.cs" />

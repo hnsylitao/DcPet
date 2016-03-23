@@ -39,5 +39,6 @@ namespace DcPet.Common
             var result= (DcUser)ctl.ViewData["_juser"];
             return result;
         }
+
     }
 }
