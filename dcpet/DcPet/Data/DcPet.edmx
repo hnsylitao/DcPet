@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DcPetModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dc_area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pettype" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="sex" Type="int" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="500" />
+          <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="lasttime" Type="datetime" Precision="0" />
+          <Property Name="token" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="demand" Type="varchar" MaxLength="2000" />
+          <Property Name="disable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pet_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="petid" Type="int" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pettype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pettype" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_user">
+          <Key>
+            <PropertyRef Name="token" />
+          </Key>
+          <Property Name="token" Type="guid" Nullable="false" />
+          <Property Name="uuid" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="device" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="platform" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="firstip" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="lastip" Type="varchar" MaxLength="102" />
+          <Property Name="firsttime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="lasttime" Type="datetime" Precision="0" />
+          <Property Name="disable" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“def.dcpet.dc_userdata”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="dc_userdata">
+          <Key>
+            <PropertyRef Name="token" />
+            <PropertyRef Name="phonenumber" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="token" Type="guid" Nullable="false" />
+          <Property Name="phonenumber" Type="varchar" MaxLength="102" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="102" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DcPetModelStoreContainer">
+          <EntitySet Name="dc_area" EntityType="Self.dc_area" Schema="dcpet" store:Type="Tables" />
+          <EntitySet Name="dc_pet" EntityType="Self.dc_pet" Schema="dcpet" store:Type="Tables" />
+          <EntitySet Name="dc_pet_image" EntityType="Self.dc_pet_image" Schema="dcpet" store:Type="Tables" />
+          <EntitySet Name="dc_pettype" EntityType="Self.dc_pettype" Schema="dcpet" store:Type="Tables" />
+          <EntitySet Name="dc_user" EntityType="Self.dc_user" Schema="dcpet" store:Type="Tables" />
+          <EntitySet Name="dc_userdata" EntityType="Self.dc_userdata" store:Type="Tables" store:Schema="dcpet">
+            <DefiningQuery>SELECT
+`dc_userdata`.`token`, 
+`dc_userdata`.`phonenumber`, 
+`dc_userdata`.`name`
+FROM `dc_userdata` AS `dc_userdata`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DcPetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dc_area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pettype" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="Int32" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="firsttime" Type="DateTime" Nullable="false" />
+          <Property Name="lasttime" Type="DateTime" />
+          <Property Name="token" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="demand" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="disable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pet_image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="petid" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firsttime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_pettype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pettype" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_user">
+          <Key>
+            <PropertyRef Name="token" />
+          </Key>
+          <Property Name="token" Type="Guid" Nullable="false" />
+          <Property Name="uuid" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="device" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="platform" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstip" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastip" Type="String" MaxLength="102" FixedLength="false" Unicode="false" />
+          <Property Name="firsttime" Type="DateTime" Nullable="false" />
+          <Property Name="lasttime" Type="DateTime" />
+          <Property Name="disable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dc_userdata">
+          <Key>
+            <PropertyRef Name="token" />
+            <PropertyRef Name="phonenumber" />
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="token" Type="Guid" Nullable="false" />
+          <Property Name="phonenumber" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="102" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DcPetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dc_area" EntityType="Self.dc_area" />
+          <EntitySet Name="dc_pet" EntityType="Self.dc_pet" />
+          <EntitySet Name="dc_pet_image" EntityType="Self.dc_pet_image" />
+          <EntitySet Name="dc_pettype" EntityType="Self.dc_pettype" />
+          <EntitySet Name="dc_user" EntityType="Self.dc_user" />
+          <EntitySet Name="dc_userdata" EntityType="Self.dc_userdata" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DcPetModelStoreContainer" CdmEntityContainer="DcPetEntities">
+          <EntitySetMapping Name="dc_area">
+            <EntityTypeMapping TypeName="DcPetModel.dc_area">
+              <MappingFragment StoreEntitySet="dc_area">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="no" ColumnName="no" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dc_pet">
+            <EntityTypeMapping TypeName="DcPetModel.dc_pet">
+              <MappingFragment StoreEntitySet="dc_pet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pettype" ColumnName="pettype" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+                <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="demand" ColumnName="demand" />
+                <ScalarProperty Name="disable" ColumnName="disable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dc_pet_image">
+            <EntityTypeMapping TypeName="DcPetModel.dc_pet_image">
+              <MappingFragment StoreEntitySet="dc_pet_image">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="petid" ColumnName="petid" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dc_pettype">
+            <EntityTypeMapping TypeName="DcPetModel.dc_pettype">
+              <MappingFragment StoreEntitySet="dc_pettype">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pettype" ColumnName="pettype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dc_user">
+            <EntityTypeMapping TypeName="DcPetModel.dc_user">
+              <MappingFragment StoreEntitySet="dc_user">
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="uuid" ColumnName="uuid" />
+                <ScalarProperty Name="device" ColumnName="device" />
+                <ScalarProperty Name="platform" ColumnName="platform" />
+                <ScalarProperty Name="firstip" ColumnName="firstip" />
+                <ScalarProperty Name="lastip" ColumnName="lastip" />
+                <ScalarProperty Name="firsttime" ColumnName="firsttime" />
+                <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+                <ScalarProperty Name="disable" ColumnName="disable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dc_userdata">
+            <EntityTypeMapping TypeName="DcPetModel.dc_userdata">
+              <MappingFragment StoreEntitySet="dc_userdata">
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
