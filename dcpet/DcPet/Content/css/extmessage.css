@@ -1,0 +1,90 @@
+﻿.jq_back {
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 19998;
+}
+.jq_shadow {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 19999;
+}
+.jq_message {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -120px;
+    width: 220px;
+    background: #ffffff;
+    z-index: 20000;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: content-box;
+}
+.jq_messagehead {
+    height: 35px;
+    position: relative;
+    border-bottom: 1px solid #B9B9B9;
+    cursor: pointer;
+}
+.jq_messagetitle {
+    line-height: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #545454;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+.jq_messagetools {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+}
+    .jq_messagetools > * {
+        line-height: 30px;
+        font-size: 22px;
+        color: #969696;
+        margin-right: 3px;
+    }
+.jq_messagebody {
+    line-height: 20px;
+    font-size: 16px;
+    color: #4C4C4C;
+    padding: 0px 10px 0px 10px;
+    margin: 10px 0px 10px 0px;
+    /* border-left: 1px solid #B9B9B9; */
+    /* border-right: 1px solid #B9B9B9; */
+}
+.jq_messagefooter {
+    height: 32px;
+    text-align: center;
+}
+.jq_messagebtn {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #427BFF;
+    padding: 5px 25px;
+    cursor: pointer;
+    margin-left: 5px;
+    line-height: 32px;
+}
+.jq_messageinputs {
+    width: 100%;
+}
+.jq_messageinput {
+    margin: 5px 0px;
+    width: 200px;
+    outline: none;
+}

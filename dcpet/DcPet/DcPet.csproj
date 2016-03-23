@@ -145,6 +145,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\extmessage.css" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\images\android.jpg" />
+    <Content Include="Content\images\ios.jpg" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\js\extmessage.js" />
+    <Content Include="Content\js\jqueryext.js" />
     <Content Include="Content\qiniu\Moxie.swf" />
     <Content Include="Content\qiniu\plupload.full.min.js" />
     <Content Include="Content\qiniu\qiniu.js" />

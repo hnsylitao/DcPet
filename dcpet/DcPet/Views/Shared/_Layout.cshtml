@@ -4,14 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 星人</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/css/extmessage.css" />
+    <link rel="stylesheet" href="~/Content/css/site.css" />
     @RenderSection("style", required: false)
 </head>
 <body>
-    <header></header>
-    @RenderBody()
-    <footer>
+    <header class="container header">
+            <a class="logo" title="星人"></a>
+            <span class="title" onclick="$.alert('星人')">星人</span>
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <footer class="container footer">
          <p>&copy; @DateTime.Now.Year - 星人</p>
     </footer>
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jqueryext.js"></script>
+    <script type="text/javascript" src="~/Content/js/extmessage.js"></script>
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>
