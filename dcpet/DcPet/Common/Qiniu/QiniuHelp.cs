@@ -25,7 +25,7 @@ namespace DcPet.Common
         /// <summary>
         /// CDN url
         /// </summary>
-        private static string cdnurl = "http://7xs3ku.com1.z0.glb.clouddn.com/";
+        public static string cdnurl = "http://7xs3ku.com1.z0.glb.clouddn.com/";
 
         /// <summary>
         /// io

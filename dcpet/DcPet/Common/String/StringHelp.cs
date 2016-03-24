@@ -19,6 +19,20 @@ namespace DcPet.Common
             }
             return Regex.IsMatch(str, @"^[1]+[3,4,5,7,8]+\d{9}$");
         }
+
+        public static bool IsUrl(this string str)
+        {
+            try
+            {
+                var url = new Uri(str);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// 去除HTML字符
         /// </summary>

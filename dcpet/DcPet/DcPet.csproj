@@ -181,7 +181,7 @@
     <Compile Include="Areas\Api\Models\UserViewModel.cs" />
     <Compile Include="Areas\File\Controllers\FileController.cs" />
     <Compile Include="Areas\File\FileAreaRegistration.cs" />
-    <Compile Include="Common\DataHelper.cs" />
+    <Compile Include="Common\Data\DataHelper.cs" />
     <Compile Include="Common\Encrypt\Encrypt.cs" />
     <Compile Include="Common\File\FileHelp.cs" />
     <Compile Include="Common\Json\Json.cs" />

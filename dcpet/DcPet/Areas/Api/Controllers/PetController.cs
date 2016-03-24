@@ -54,7 +54,7 @@ namespace DcPet.Areas.Api.Controllers
                     petname= p.pet.name,
                     petarea=p.area.name,
                     petaddress=p.pet.address,
-                    petdate=p.pet.date,
+                    petdate=Math.Floor((DateTime.Now-p.pet.date).TotalDays/30),
                     petdemand=p.pet.demand,
                     petsex=p.pet.sex,
                     pettype=p.type.pettype,

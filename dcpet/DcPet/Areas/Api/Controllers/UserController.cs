@@ -66,7 +66,8 @@ namespace DcPet.Areas.Api.Controllers
             {
                 TResult T = new TResult();
                 var juser = this.GetUser();
-                if (!model.phone.IsPhoneNumber()) return new TResult("手机号不正确").ToResult();
+                var message = model.checkmodel();
+                if (!string.IsNullOrEmpty(message)) { return new TResult(message).ToResult(); }
                 if (juser.data != null)
                 {
                     var userdata = wu.db.dc_userdata.Where(p => p.token == juser.user.token).FirstOrDefault();
