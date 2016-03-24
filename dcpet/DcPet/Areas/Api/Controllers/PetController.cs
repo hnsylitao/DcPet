@@ -45,7 +45,7 @@ namespace DcPet.Areas.Api.Controllers
                     .ThenBy(p=>p.desarea)
                     .ThenBy(p=>p.desdate)
                     .ThenByDescending(p => p.depet.pet.firsttime)
-                    .Where(p => p.depet.pet.sex != jpet.pet.sex)
+                    .Where(p => p.depet.pet.sex != jpet.pet.sex && p.depet.type.type == jpet.type.type)
                     .Select(p => p.depet);
                 }
                 var count = query.Count();
