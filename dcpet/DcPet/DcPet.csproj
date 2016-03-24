@@ -224,7 +224,7 @@
     <Compile Include="Data\dc_userdata.cs">
       <DependentUpon>DcPet.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Interface\IWorkUnit.cs" />
+    <Compile Include="Data\IWorkUnit\IWorkUnit.cs" />
     <Compile Include="Data\WorkUnit.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

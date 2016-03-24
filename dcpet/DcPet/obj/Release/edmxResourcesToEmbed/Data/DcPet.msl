@@ -41,6 +41,7 @@
     <EntitySetMapping Name="dc_pettype">
       <EntityTypeMapping TypeName="DcPetModel.dc_pettype">
         <MappingFragment StoreEntitySet="dc_pettype">
+          <ScalarProperty Name="type" ColumnName="type" />
           <ScalarProperty Name="pettype" ColumnName="pettype" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
