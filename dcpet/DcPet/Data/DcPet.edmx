@@ -45,6 +45,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pettype" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="dc_user">
           <Key>
@@ -62,7 +63,7 @@
         </EntityType>
         <EntityType Name="dc_userdata">
           <Key>
-            <PropertyRef Name="phonenumber" />
+            <PropertyRef Name="token" />
           </Key>
           <Property Name="token" Type="guid" Nullable="false" />
           <Property Name="phonenumber" Type="varchar" MaxLength="102" Nullable="false" />
@@ -128,6 +129,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pettype" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="dc_user">
           <Key>
@@ -145,7 +147,7 @@
         </EntityType>
         <EntityType Name="dc_userdata">
           <Key>
-            <PropertyRef Name="phonenumber" />
+            <PropertyRef Name="token" />
           </Key>
           <Property Name="token" Type="Guid" Nullable="false" />
           <Property Name="phonenumber" Type="String" Nullable="false" MaxLength="102" FixedLength="false" Unicode="false" />
@@ -197,6 +199,7 @@
           <EntitySetMapping Name="dc_pettype">
             <EntityTypeMapping TypeName="DcPetModel.dc_pettype">
               <MappingFragment StoreEntitySet="dc_pettype">
+                <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="pettype" ColumnName="pettype" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

@@ -16,5 +16,6 @@ namespace DcPet.Data
     {
         public int id { get; set; }
         public string pettype { get; set; }
+        public int type { get; set; }
     }
 }

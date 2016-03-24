@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/3/23 14:29:22                           */
+/* Created on:     2016/3/24 11:12:44                           */
 /*==============================================================*/
 
 
@@ -54,6 +54,7 @@ create table Dc_PetType
 (
    id                   int not null auto_increment,
    pettype              varchar(500) not null,
+   type                 int,
    primary key (id)
 );
 
@@ -93,6 +94,7 @@ create table Dc_UserData
 (
    token                char(36) not null,
    phonenumber          varchar(102) not null,
-   name                 varchar(102) not null
+   name                 varchar(102) not null,
+   primary key (token)
 );
 

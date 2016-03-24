@@ -1,4 +1,4 @@
-﻿using DcPet.Data.Interface;
+﻿using DcPet.Data.IWorkUnit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DcPet.Data
 {
-    public class WorkUnit : IWorkUnit
+    public class WorkUnit : IWorkUnit.IWorkUnit
     {
         public DcPetEntities db { get; set; }
 

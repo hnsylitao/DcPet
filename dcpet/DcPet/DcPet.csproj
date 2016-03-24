@@ -177,9 +177,11 @@
     <Compile Include="Areas\Api\Controllers\CommonController.cs" />
     <Compile Include="Areas\Api\Controllers\PetController.cs" />
     <Compile Include="Areas\Api\Controllers\UserController.cs" />
+    <Compile Include="Areas\Api\IControllers\BaseApiController.cs" />
     <Compile Include="Areas\Api\Models\UserViewModel.cs" />
     <Compile Include="Areas\File\Controllers\FileController.cs" />
     <Compile Include="Areas\File\FileAreaRegistration.cs" />
+    <Compile Include="Common\DataHelper.cs" />
     <Compile Include="Common\Encrypt\Encrypt.cs" />
     <Compile Include="Common\File\FileHelp.cs" />
     <Compile Include="Common\Json\Json.cs" />
@@ -256,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Views\Base\" />
     <Folder Include="Areas\Api\Views\Common\" />
     <Folder Include="Areas\Api\Views\Pet\" />
     <Folder Include="Areas\Api\Views\Shared\" />

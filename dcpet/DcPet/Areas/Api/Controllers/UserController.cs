@@ -7,10 +7,11 @@ using DcPet.Common;
 using DcPet.Data;
 using DcPet.Areas.Api.Models;
 using DcPet.Models;
+using DcPet.Areas.Api.IControllers;
 
 namespace DcPet.Areas.Api.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseApiController
     {
         /// <summary>
         /// 获取用户数据

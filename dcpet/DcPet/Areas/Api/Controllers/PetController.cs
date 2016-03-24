@@ -1,4 +1,5 @@
-﻿using DcPet.Common;
+﻿using DcPet.Areas.Api.IControllers;
+using DcPet.Common;
 using DcPet.Data;
 using DcPet.Models;
 using System;
@@ -9,7 +10,7 @@ using System.Web.Mvc;
 
 namespace DcPet.Areas.Api.Controllers
 {
-    public class PetController : Controller
+    public class PetController : BaseApiController
     {
         
         /// <summary>

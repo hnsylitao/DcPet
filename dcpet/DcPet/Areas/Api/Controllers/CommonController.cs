@@ -1,4 +1,5 @@
-﻿using DcPet.Common;
+﻿using DcPet.Areas.Api.IControllers;
+using DcPet.Common;
 using DcPet.Data;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace DcPet.Areas.Api.Controllers
 {
-    public class CommonController : Controller
+    public class CommonController : BaseApiController
     {
         [HttpGet]
         public ActionResult Area()
@@ -26,16 +27,26 @@ namespace DcPet.Areas.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult PetType()
+        public ActionResult PetType(int? type)
         {
             using (WorkUnit wu = new WorkUnit())
             {
                 TResult T = new TResult();
-                T.data = wu.db.dc_pettype.OrderBy(p => p.id).Select(p => new
+                if (type != null)
                 {
-                    p.id,
-                    p.pettype
-                }).ToArray();
+                    T.data = wu.db.dc_pettype.Where(p=>p.type==type.Value).OrderBy(p => p.id).Select(p => new
+                    {
+                        p.id,
+                        p.pettype
+                    }).ToArray();
+                }
+                else {
+                    T.data = wu.db.dc_pettype.OrderBy(p => p.id).Select(p => new
+                    {
+                        p.id,
+                        p.pettype
+                    }).ToArray();
+                }
                 return T.ToResult();
             }
         }

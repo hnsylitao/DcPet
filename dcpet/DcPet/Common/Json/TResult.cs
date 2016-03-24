@@ -138,8 +138,8 @@ namespace DcPet.Common
         /// </summary>
         Error=400,
         /// <summary>
-        /// 未登录
+        /// 不存在
         /// </summary>
-        Fail=401,
+        NoApi=404,
     }
 }

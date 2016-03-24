@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DcPet.Data.Interface
+namespace DcPet.Data.IWorkUnit
 {
     interface IWorkUnit : IDisposable
     {
