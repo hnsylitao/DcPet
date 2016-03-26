@@ -22,6 +22,7 @@ namespace DcPet.Areas.Api.Models
         public DateTime petdate { get; set; }
         public string petarea { get; set; }
         public string petaddress { get; set; }
+        public string petweight { get; set; }
         public string petdemand { get; set; }
         public string[] petimages { get; set; }
 
@@ -40,9 +41,17 @@ namespace DcPet.Areas.Api.Models
             {
                 return "宠物名不能为空";
             }
+            if (string.IsNullOrEmpty(petweight))
+            {
+                return "宠物体重不能为空";
+            }
             if (string.IsNullOrEmpty(petarea))
             {
                 return "区域不能为空";
+            }
+            if (!(petimages.Length >= 3 && petimages.Length<=9))
+            {
+                return "图片至少三张至多九张";
             }
             foreach (var item in petimages)
             {

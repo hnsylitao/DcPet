@@ -24,6 +24,7 @@
     <Property Name="token" Type="guid" Nullable="false" />
     <Property Name="demand" Type="varchar" MaxLength="2000" />
     <Property Name="disable" Type="bit" Nullable="false" />
+    <Property Name="weight" Type="varchar" MaxLength="32" Nullable="false" />
   </EntityType>
   <EntityType Name="dc_pet_image">
     <Key>

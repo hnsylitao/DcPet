@@ -29,6 +29,7 @@
           <Property Name="token" Type="guid" Nullable="false" />
           <Property Name="demand" Type="varchar" MaxLength="2000" />
           <Property Name="disable" Type="bit" Nullable="false" />
+          <Property Name="weight" Type="varchar" MaxLength="32" Nullable="false" />
         </EntityType>
         <EntityType Name="dc_pet_image">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="token" Type="Guid" Nullable="false" />
           <Property Name="demand" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="disable" Type="Boolean" Nullable="false" />
+          <Property Name="weight" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="dc_pet_image">
           <Key>
@@ -171,6 +173,7 @@
           <EntitySetMapping Name="dc_pet">
             <EntityTypeMapping TypeName="DcPetModel.dc_pet">
               <MappingFragment StoreEntitySet="dc_pet">
+                <ScalarProperty Name="weight" ColumnName="weight" />
                 <ScalarProperty Name="disable" ColumnName="disable" />
                 <ScalarProperty Name="demand" ColumnName="demand" />
                 <ScalarProperty Name="token" ColumnName="token" />

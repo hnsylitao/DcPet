@@ -32,6 +32,7 @@
     <Property Name="token" Type="Guid" Nullable="false" />
     <Property Name="demand" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
     <Property Name="disable" Type="Boolean" Nullable="false" />
+    <Property Name="weight" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="dc_pet_image">
     <Key>

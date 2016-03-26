@@ -26,5 +26,6 @@ namespace DcPet.Data
         public System.Guid token { get; set; }
         public string demand { get; set; }
         public bool disable { get; set; }
+        public string weight { get; set; }
     }
 }

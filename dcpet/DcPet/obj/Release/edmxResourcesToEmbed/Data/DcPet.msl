@@ -13,6 +13,7 @@
     <EntitySetMapping Name="dc_pet">
       <EntityTypeMapping TypeName="DcPetModel.dc_pet">
         <MappingFragment StoreEntitySet="dc_pet">
+          <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="disable" ColumnName="disable" />
           <ScalarProperty Name="demand" ColumnName="demand" />
           <ScalarProperty Name="token" ColumnName="token" />

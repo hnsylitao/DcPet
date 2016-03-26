@@ -92,6 +92,7 @@ namespace DcPet.Areas.Api.Controllers
                         address = model.petaddress,
                         area = model.petarea,
                         date = model.petdate,
+                        weight=model.petweight,
                         demand = model.petdemand,
                         disable = false,
                         firsttime = DateTime.Now,
@@ -116,6 +117,7 @@ namespace DcPet.Areas.Api.Controllers
                     jpet.pet.address = model.petaddress;
                     jpet.pet.area = model.petarea;
                     jpet.pet.date = model.petdate;
+                    jpet.pet.weight = model.petweight;
                     jpet.pet.demand = model.petdemand;
                     jpet.pet.lasttime = DateTime.Now;
                     jpet.pet.name = model.petname;
