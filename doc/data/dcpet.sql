@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/3/24 11:12:44                           */
+/* Created on:     2016/3/26 17:28:48                           */
 /*==============================================================*/
 
 
@@ -39,6 +39,8 @@ create table Dc_Pet
    date                 datetime not null,
    area                 varchar(32) not null,
    address              varchar(500),
+   weight
+   weight       varchar(36),
    firsttime            datetime not null,
    lasttime             datetime,
    token                char(36) not null,
